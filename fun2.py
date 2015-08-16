@@ -4,12 +4,12 @@
 #### Modify the variables so that all of the statements evaluate to True. ####
 ##############################################################################
 
-var1 = 
-var2 = 
-var3 = 
-var4 = 
-var5 = 
-var6 = 
+var1 = -588
+var2 = "pi banana a string"
+var3 = ['hi', 'hello', "salut", 'salaam', 'namaste']
+var4 = ("pooja", "says", "Hello, Python!")
+var5 = {'happy': 1, 'tuna':7, 'egg':'salad'}
+var6 = 11.0
 
 ###############################################
 #### Don't edit anything below this comment ###

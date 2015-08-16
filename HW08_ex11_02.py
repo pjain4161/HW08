@@ -34,20 +34,32 @@ def histogram_old(s):
             d[c] += 1
     return d
 
-def histogram_new(s):
-    pass
+def histogram_new(pledge_list):
+    
+    for c in pledge_list:
+        pledge_histogram[c] = 1 + pledge_histogram.get(c, 0)
+    return pledge_histogram
 
 def get_pledge_list():
     """ Opens pledge.txt and converts to a list, each item is a word in 
     the order it appears in the original file. returns the list.
     """
-    # Your code here.
-    pass
-    #return pledge_list (uncomment this)
+    with open("pledge.txt") as f :
+        pledge_list = []
+        for line in f:
+            words = line.replace(':',' ').replace(',',' ').replace('.',' ').split()   #replace all special characters with the space 
+            #and split line at space
+            pledge_list += words
+#             for word in words:
+#                 word_list.append(word)        
+        return  pledge_list
+
 
 ##############################################################################
 def main():  # DO NOT CHANGE BELOW
     print histogram_new(get_pledge_list())
+
+
 
 if __name__ == '__main__':
     main()

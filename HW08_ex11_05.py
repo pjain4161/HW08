@@ -25,7 +25,19 @@ def invert_dict_old(d):
 
 
 def invert_dict_new(d):
-    pass
+    inverse = dict()
+    for key in d:
+        val = d[key]
+        inverse.get(val,0 )
+        
+        
+        
+        if val not in inverse:
+            inverse[val] = [key]
+        else:
+            inverse[val].append(key)
+    return inverse
+
 
 
 def print_hist_newest(d):

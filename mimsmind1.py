@@ -13,18 +13,16 @@
 # guess a higher or lower number, and prompt the user to type in the next guess. 
 ################################################################################
 
+
+#Imports
 ###############################################################################################################
-#                                             Imports
-##############################################################################################################
 from random import randint
 import sys
 from _random import Random
 
 
-###############################################################################################################
-#                                             Body
-######################################################################################################
 
+#body
 ######################################################################################################
 #get_number(digits)
 #This function prompts the user to type in a guess, informing the user of the number of digits expected
@@ -59,7 +57,6 @@ def maximum_rounds(length):
 #A matching digit in the correct position will result in a bull, 
 #while a matching digit in the wrong position will result in a cow
 ########################################################################################################
-
 def bulls_and_cows_feedback(user_num, random_num):
     bull = 0
     cow = 0
@@ -79,9 +76,6 @@ def bulls_and_cows_feedback(user_num, random_num):
             
     values = [bull, cow]
     return values
-            
-   
-
 
 ########################################################################################################
 # match(user_num,random_num, count)
@@ -99,14 +93,8 @@ def match(user_num,random_num, count):
         
     return values
  
-
-
 ####################################################################################################################
-def main():
-    #############################################################################################################
-    ################               checks and Initialisations                #####################################
-    #############################################################################################################
-          
+def main():     
     # If the command line argument length is not provided, the default value is 3
     if len(sys.argv) == 1:
             No_of_digits = 3
@@ -120,12 +108,8 @@ def main():
         else:
             No_of_digits = int(sys.argv[1].strip())
     
-    #Generating a random Number with No_of_digits
-#     random_number = get_random_number(No_of_digits)
-
-    random_number = '070'
-
-    print random_number
+#     Generating a random Number with No_of_digits
+    random_number = get_random_number(No_of_digits)
     
     #generating maximum number of rounds
     maxrounds = maximum_rounds(No_of_digits)
@@ -137,7 +121,6 @@ def main():
     
     #initialising counter
     count = 1   
-    
     
     while (count < maxrounds):
         #check if user has entered any input other than a numeric value and handle the exception
@@ -156,7 +139,6 @@ def main():
                 values = match(user_number, random_number, count)      
                 user_number = raw_input("\n{0} bull(s), {1} cow(s). Try again: " .format(values[0], values[1]))
                 count = count + 1
-    
    
     values = match(user_number, random_number, count) 
    
